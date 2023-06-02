@@ -1,0 +1,467 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Payment!{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            width: 100%;
+            background-color: #e9eaef;
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        .container{
+            background-color: #dfdfe1;
+            border-radius: 30px;
+            max-width: 100%;
+            width: 95%;
+            max-height: 100%;
+            margin: 10px auto;
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+        }
+        .form{
+            background-color: #ffffff;
+            border-radius: 30px;
+            width: 25%;
+            height: 70%;
+            margin-top: 50px;
+            margin-right: 30px;
+            margin-left: 20px;
+            font-weight: 400;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            padding-bottom: 40%;
+            background-color: #699f47;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .text{
+            text-align: center;
+            font-weight: 400;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            height: 55px;
+            padding-top: 40px;
+        }
+        .detail{
+            padding: 30px;
+        }
+        th{
+            padding: 0px 60px 0px 20px;
+            font-weight: 700;
+        }
+        td{
+            padding: 20px 60px 0px 20px;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        .box-header {
+            background-color: #34582a;
+            color: #ffffff;
+            text-align: left;
+            padding-top: 15px;
+            padding-left: 30px;
+            font-weight: 700;
+            border-radius: 30px 30px 0px 0px;
+            width: 100%;
+            height: 50px;
+        }
+        .box {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            text-align: center;
+            width: 70%;
+            padding: 0 0px 30px 0px;
+            margin-top: 50px;
+            margin-bottom: 370px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        .button {
+            position: relative;
+            top: -1px;
+            left: 5%;
+            width: 80;
+            background-color:#ffffff;
+            color: #000000;
+            border: 1px solid #34582a;
+        }
+        .button:hover {
+            background-color:#34582a;
+            color: #ffffff;
+            transition: 0.5s;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            td{
+                padding: 20px 0px 0px 20px;
+            }
+            th{
+                padding: 0px 0px 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .form {
+                width: 100%;
+                margin: 20px 0;
+                padding: 20px;
+            }
+
+            .box {
+                width: 100%;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+
+            .profile-pic {
+                width: 300px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width:850px) {
+            .profile-pic {
+                width: 250px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box{
+                padding: 0 0px 30px 0px;
+            }
+            td{
+                padding: 20px 0px 0px 20px;
+            }
+            th{
+                padding: 0px 0 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            .form {
+                margin-left: 0;
+            }
+
+            .box {
+                width: 100%;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+            .detail{
+                padding: 20px;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            td{
+                padding: 20px 0px 0px 20px;
+            }
+            th{
+                padding: 0px 0 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .form {
+                width: 100%;
+                max-width: 500px;
+            }
+            .box{
+                width: 100%;
+                max-width: 500px;
+                padding: 0 0px 30px 0px;
+
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            td{
+                padding: 20px 0px 0px 20px;
+                font-size: 11px;
+            }
+            th{
+                padding: 0px 0px 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .box {
+                padding: 0 0px 30px 0px;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            th{
+                padding: 0px .5px 0px 20px;
+            }
+            td{
+                padding: 20px 0px 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 460px) {
+            th{
+                padding: 0px 0px 0px 0px;
+            }
+            td{
+                padding: 20px 0px 0px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 430px) {
+            th{
+                padding: 0px 0px 0px 1px;
+            }
+            td{
+                padding: 0px 0px 0px 10px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            th{
+                padding: 0px 0px 0px 1px;
+                font-size: 8px;
+            }
+            td{
+                padding: 0px 0px 10px 10px;
+                font-size: 8px;
+            }
+        }
+
+
+        @media only screen and (max-width: 380px) {
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box{
+                padding: 0 0px 30px 0px;
+            }
+            td{
+                padding: 10px 0px 0px 1px;
+                font-size: 8px;
+            }
+            th{
+                padding: 0px 0 0px 1px;
+                font-size: 8px;
+            }
+        }
+
+        @media only screen and (max-width: 350px) {
+            th{
+                padding: 0px 0px 0px 1px;
+                font-size: 6px;
+            }
+            td{
+                padding: 0px 0px 0px 10px;
+                font-size: 6px;
+            }
+        }
+
+        @media only screen and (max-width: 280px) {
+            th{
+                padding: 0px 0px 0px 1px;
+                font-size: 7px;
+            }
+            td{
+                padding: 0px 0px 0px 6px;
+                font-size: 7px;
+            }
+        }
+
+        @media only screen and (max-width: 200px) {
+            th{
+                padding: 0px 0px 0px 1px;
+                font-size: 2px;
+            }
+            td{
+                padding: 0px 0px 0px 10px;
+                font-size: 2px;
+            }
+        }
+
+        @media only screen and (max-width: 160px) {
+            .profile-pic {
+                width: 50px;
+                height: 50px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            td{
+                padding: 0px 0px 0px 1px;
+            }
+            th{
+                padding: 0px 0 0px 1px;
+            }
+        }
+
+        @media only screen and (max-width: 120px) {
+            .profile-pic {
+                width: 30px;
+                height: 30px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 11px;
+            }
+        }
+
+        @media only screen and (max-width: 70px){
+            .profile-pic {
+                width: 15px;
+                height: 15px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 2px;
+            }
+            .box-header {
+                text-align: left;
+                padding-top: 15px;
+                padding-left: 3px;
+                font-weight: 700;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 50px;
+            }
+            td{
+                padding: 1px 0px 0px 1px;
+                font-size: 2px;
+            }
+            th{
+                padding: 0px 0 0px 1px;
+                font-size: 2px;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="form">
+            <div class="profile-pic"></div>
+            <br>
+            <div class="text">
+                <a href="#"><img src="/images/icons/chats.png" width="20px" class="float-left" height="20px" alt="">Chat</a>
+                <hr>
+                <a href="/bookings"><img src="/images/icons/dbl1.png" width="20px" class="float-left" height="20px" alt="">Bookings</a>
+                <hr>
+                <a href="/user/profile"><img src="/images/icons/dbl6.png" width="20px" class="float-left" height="20px" alt="">My Profile</a>
+                <hr>
+                <a href="/change/password"><img src="/images/icons/db20.png" width="20px" class="float-left" height="20px" alt=""> Change Password</a>
+                <hr>
+                <a href="/payments"><img src="/images/icons/dbl9.png" width="20px"  class="float-left" height="20px" alt="">Payments</a>
+                <hr>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <p>Payments</p>
+            </div>
+            <div class="detail">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>No:</th>
+                        <th>Trip:</th>
+                        <th>Start Date</th>
+                        <th>Price</th>
+                        <th>Payment</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Florida Mall Avenue,Orlando,FL,USA</td>
+                        <td>March 01,2023</td>
+                        <td>
+                            $2970
+                            <br>
+                            290 (at Booking)
+                        </td>
+                        <td><button type="button" class="button">$ Make Payment</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

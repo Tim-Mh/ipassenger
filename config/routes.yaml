@@ -1,0 +1,12 @@
+# routes.yaml
+
+taxis:
+  path: /taxis
+  controller: App\Controller\HomeController::taxis
+
+registration:
+  path: /register
+  controller: App\Controller\RegistrationController::register
+
+app_logout:
+  path: /logout

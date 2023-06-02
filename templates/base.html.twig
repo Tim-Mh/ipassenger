@@ -1,0 +1,185 @@
+{% set session = app.session %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <title>{% block title %}Welcome to iPassenger!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+
+        <style>
+  .text-logo {
+    margin-top: -9px;
+    margin-left: 50px;
+  }
+.navbar-nav > li {
+  border-right: 1px solid #333;
+  height: 20px; /* set the height of the li element */
+  line-height:20px; /* set the line-height to match the height of the li element */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.navbar-nav > li:last-child {
+  border-right: none; /* remove the border from the last li element */
+}
+.navbar-nav > li > a {
+    width: 1591px;
+    height: 22px;
+    color: #3c542d;
+    font-family: 'Myriad Pro', sans-serif;
+  text-decoration: none;
+  font-size: 15px;
+font-weight: 700;
+}
+  @media (min-width: 991px) and (max-width: 1299px) {
+
+      .navbar-nav > li > a {
+
+          color: #3c542d;
+          font-family: 'Myriad Pro', sans-serif;
+          text-decoration: none;
+          font-size: 11px;
+          font-weight: 700;
+      }
+      .navbar-expand-lg .navbar-nav {
+          padding-right: 2px;
+      }
+
+      .navbar-expand-lg .link {
+          /*font-size: 0.9rem;*/
+          white-space: nowrap;
+      }
+
+  }
+
+    @media (max-width: 767px) {
+      .navbar-nav {
+        margin-left: 0 !important;
+      }
+    }
+  @media (max-width: 992px) {
+      .navbar-nav {
+          margin-left: 0 !important;
+          font-size: 2px;
+      }
+  }
+  @media (max-width: 1348px) {
+      .navbar-nav {
+          margin-left: 0 !important;
+          /*font-size: 2px;*/
+      }
+  }
+  .dropdown-toggle {
+      border: 1px solid white;
+      border-radius: 20px;
+      /*padding: 8px 16px;*/
+      padding:10px;
+      background-color: #699f47;
+
+      cursor: pointer;
+  }
+  .dropdown-toggle:hover,
+  .dropdown-toggle:focus {
+      background-color: #699f47;
+      color: #ffffff;
+  }
+  .dropdown-menu {
+      display: none;
+      position: absolute;
+      z-index: 1;
+  }
+  .dropdown-toggle:hover + .dropdown-menu,
+  .dropdown-toggle:focus + .dropdown-menu {
+      display: block;
+  }
+  .dropdown-item {
+      color: black;
+  }
+  @media screen and (max-width: 767px) {
+      .dropdown {
+          margin-top: 15px; !important;
+      }
+      .dropdown-toggle{
+          border-radius: 2px;
+      }
+  }
+
+
+        </style>
+
+    </head>
+    <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent custom-navbar ">
+  <a class="navbar-brand" href="#">
+  <img src="/images/ipassenger-logo.png" alt="iPassenger" style="height: 50px;">
+  <div class="text-logo"><img src="/images/book-journey.png" alt="iPassenger" style="height: 4.5px; widht:auto;"></div>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" style="margin-left: 40px;">
+      <li class="nav-item" >
+        <a class="link" href="/rideshare">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="link" href="/about/us">ABOUT US</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="link" href="/privacy/policy">PRIVACY POLICY</a>
+      </li>
+      <li class="nav-item">
+        <a class="link" href="/terms/condition">TERMS & CONDITIONS</a>
+      </li>
+      <li class="nav-item">
+        <a class="link" href="/mission/statement">MISSION STATEMENT</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto" >
+
+      <li class="nav-item mr-sm-2">
+      <a class="link" href="mailto:support@ipassenger.net">Email:support@ipassenger.net</a>
+      </li>
+        <li class="nav-item dropdown mr-sm-2">
+            {% if session.get('user') %}
+                {% set user = session.get('user') %}
+                <a class="dropdown-toggle link my-account" role="button" data-toggle="dropdown" aria-haspopup="true" id="navbarDropdown" style="color:#ffffff;"  href="#" >{{ user.firstName }}</a>
+            {% elseif session.get('user_name') %}
+                <a class="dropdown-toggle link my-account" role="button" data-toggle="dropdown" aria-haspopup="true" id="navbarDropdown" style="color:#ffffff;"  href="#" >{{ session.get('user_name') }}</a>
+            {% elseif session.get('user_data') %}
+                {% set user = app.session.get('user_data') %}
+                <a class="dropdown-toggle link my-account" role="button" data-toggle="dropdown" aria-haspopup="true" id="navbarDropdown" style="color:#ffffff;"  href="#" >{{ user.name }}</a>
+            {% else  %}
+                <a class="dropdown-toggle link my-account" role="button" data-toggle="dropdown" aria-haspopup="true" id="navbarDropdown" style="color:#ffffff;"  href="#" >My Account</a>
+            {% endif %}
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   {% if session.get('user') or session.get('user_name') or session.get('user_data') %}
+                    <a class="dropdown-item" href="/user/profile">My Profile</a>
+                    <a class="dropdown-item" href="{{ path('logout') }}">Logout</a>
+                   {% else %}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    <a class="dropdown-item" href="/registration">Registration</a>
+                   {% endif %}
+            </div>
+        </li>
+   </ul>
+  </div>
+</nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,911 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Distance Page{% endblock %}
+{% block stylesheets %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block body %}
+    <style>
+        .color-main {
+            color: #355518;
+        }
+
+        /* .box p {
+      color: black;
+    } */
+
+        .box {
+            width: 90%;
+            height: auto;
+            margin-top: 10px;
+            /* Adjust the margin-top value as needed */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #aecaa4;
+            border-radius: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #box-container {
+            margin-top: 25px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .box {
+                width: 100%;
+                height: auto;
+                margin-top: 10px;
+            }
+            #box-container {
+                font-size: 13px;
+            }
+            #distance{
+                position: relative;
+                margin-top: -30px;
+                margin-left: -10px;
+            }
+            .text-left{
+                position: relative;
+                margin-left: -50px;
+                margin-top: -20px;
+            }
+            #return{
+                position: relative;
+                margin-left: 450px;
+                margin-top: -90px;
+            }
+            .trip_card{
+                display: flex;
+                flex-direction: column;
+                height:auto;
+            }
+            .detail-box{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+            #return{
+                position: relative;
+                margin-left: 220px;
+                margin-top: -190px;
+            }
+            #distance{
+                position: relative;
+                margin-top: -130px;
+                margin-left: -10px;
+            }
+        }
+        @media only screen and (max-width :376px){
+            #box-container{
+                font-size: 10px;
+            }
+            #distance{
+                position: relative;
+                margin-top: -130px;
+                margin-left: -30px;
+            }
+            #return{
+                position: relative;
+                margin-top: -210px;
+                margin-left: 160px;
+            }
+        }
+        @media (max-width: 768px){
+            #distance{
+                position: relative;
+                margin-top: -30px;
+            }
+            #return{
+                position: relative;
+                margin-top: -80px;
+            }
+        }
+        @media only screen and (max-width: 340px){
+            #return{
+                position: relative;
+                margin-left: 170px;
+                margin-top: -180px;
+            }
+            #distanceimg{
+                width: 30%;
+            }
+        }
+        @media only screen and (max-width: 360px) {
+            #box-container{
+                font-size: 11px;
+            }
+            .text-left{
+                position: relative;
+                margin-left: -60px;
+                margin-top: -20px;
+            }
+            #distance{
+                position: relative;
+                margin-top: -130px;
+                margin-left: -30px;
+            }
+            #return{
+                position: relative;
+                left: -100px;
+            }
+        }
+        @media only screen and (max-width: 350px){
+            #return{
+                position: relative;
+                left: -10px;
+            }
+        }
+        @media only screen and (max-width: 330px){
+            #return{
+                position: relative;
+                left: -40px;
+            }
+            #distanceimg{
+                width: 30%;
+            }
+        }
+        @media only screen and (max-width: 610px){
+            #return{
+                position: relative;
+                left: -20px;
+            }
+        }
+        @media only screen and (max-width: 315px){
+            #return{
+                position: relative;
+                left: -30px;
+                top: 20px;
+            }
+        }
+        @media only screen and (max-width: 325px){
+            #return{
+                position: relative;
+                left: -40px;
+                top: 10px;
+            }
+        }
+        @media only screen and (max-width: 300px){
+            #box-container{
+                font-size: 10px;
+            }
+            #return{
+                position: relative;
+                left: -70px
+            }
+        }
+        @media only screen and (max-width: 280px){
+            #box-container{
+                font-size: 10px;
+            }
+            #return{
+                position: relative;
+                left: -110px;
+            }
+        }
+
+
+        .traking-icon {
+            filter: invert(1);
+        }
+
+        .traking-icon {
+            filter: hue-rotate(90deg);
+        }
+
+        .trip_card {
+            width: 90%;
+            height: auto;
+            margin-top: 15px;
+            padding: 20px;
+            /* Adjust the margin-top value as needed */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #eaeaea;
+            border-radius: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            /* justify-content: space-around;
+            align-items: center; */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .trip_card {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                /* Adjust the margin-top value as needed */
+            }
+        }
+        @media only screen and (max-width: 750px){
+            #return{
+                position: relative;
+                margin-top: -200px;
+            }
+            #distance{
+                position: relative;
+                margin-top: -150px;
+            }
+        }
+
+
+        .profile-pic {
+            /*width: 40%;*/
+            height: 0;
+            /*padding-bottom: 40%;*/
+            /* The padding-bottom value should be the same as the width value to create a perfect circle */
+            /*background-color: #519b29;*/
+            /*border-radius: 50%;*/
+            /* This sets the border-radius property to 50% to create a circle */
+            margin: 0 auto;
+            /* This centers the circle horizontally */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .profile-pic {
+                width: 40%;
+                /*padding-bottom: 40%;*/
+                /* Adjust the padding-bottom value as needed */
+            }
+        }
+
+        .detail-box {
+            /*width: 80%;*/
+            /* Set the width of the box */
+            padding: 20px;
+            /* Add some padding */
+            background-color: #fff;
+            /* Set a background color */
+            margin: 0 auto;
+            /* padding: 20px; */
+            display: flex;
+            /* use flexbox for layout */
+            flex-wrap: wrap;
+            /* allow elements to wrap to new line */
+            justify-content: space-between;
+            /* center the content */
+            gap: 20px;
+            /* add some spacing between elements */
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            /* If the screen width is less than 600px, adjust the width of the box */
+            .detail-box {
+                flex-direction: column;
+                /* stack elements vertically */
+                align-items: center;
+                /* center the content */
+                gap: 10px;
+                /* reduce spacing between elements */
+            }
+            #return{
+                position: relative;
+                margin-left: 300px;
+            }
+        }
+
+        @media only screen and (max-width: 540px){
+            #distance{
+                position: relative;
+                margin-top: -130px;
+            }
+            #return{
+                position: relative;
+                margin-left: 250px;
+                margin-top: -180px;
+            }
+        }
+
+        .url-text ul,
+        .url-detaile ul {
+            list-style: none;
+            font-size: 20px;
+            padding: 0;
+            /* remove default padding */
+        }
+
+        .url-detaile ul a {
+            text-decoration: none;
+        }
+
+        .url-detaile ul img {
+            width: 120px;
+        }
+
+        .price-box {
+            text-align: center;
+            margin-top: 20px;
+            /* add some margin to separate from previous elements */
+        }
+
+        .price-box h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .price-box a {
+            background-color: #456f21;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 40px;
+        }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 767px) {
+            .url-text ul,
+            .url-detaile ul {
+                font-size: 16px;
+                /* decrease font size */
+            }
+
+            .price-box {
+                padding: 20px;
+                /* add padding */
+            }
+
+            .price-box h1 {
+                font-size: 24px;
+                /* decrease font size */
+            }
+
+            .price-box a {
+                font-size: 16px;
+                /* decrease font size */
+                padding: 10px 20px;
+                /* decrease padding */
+            }
+        }
+        @media only screen and (max-width: 400px){
+            #return{
+                position: relative;
+                margin-left: 240px;
+            }
+        }
+        @media only screen and (max-width: 240px){
+            .text-left{
+                font-size: 8px;
+            }
+            #distance{
+                position: relative;
+                left: -10px;
+                top: 20px;
+                font-size: 8px;
+            }
+            #return{
+                font-size: 8px;
+                position: relative;
+                left: -110px;
+                top: 30px;
+            }
+            .profile-pic{
+                width: 70%;
+                /*padding-bottom: 70%;*/
+                position: relative;
+                top: -40px;
+            }
+        }
+        @media only screen and (max-width: 200px){
+            #return{
+                position: relative;
+                left: -190px;
+            }
+        }
+        @media only screen and (max-width: 170px){
+            #return{
+                position: relative;
+                left: -160px;
+            }
+        }
+        @media only screen and (max-width: 170px){
+            #return{
+                position: relative;
+                left: -220px;
+            }
+        }
+        @media only screen and (max-width: 130px){
+            .text-left{
+                font-size: 5px;
+            }
+            #distance{
+                font-size: 5px;
+            }
+            #return{
+                font-size: 5px;
+                position: relative;
+                left: -180px;
+            }
+        }
+        @media only screen and (max-width: 110px){
+            .text-left{
+                font-size: 5px;
+            }
+            #distance{
+                font-size: 5px;
+            }
+            #return{
+                font-size: 5px;
+                position: relative;
+                left: -200px;
+            }
+        }
+        @media only screen and (max-width: 70px){
+            .text-left{
+                font-size: 5px;
+            }
+            #distance{
+                font-size: 5px;
+            }
+            #return{
+                font-size: 5px;
+                position: relative;
+                left: -250px;
+            }
+        }
+        .fa {
+            padding: 5px;
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 0px 2px 15px;
+        }
+
+        .fa:hover {
+            opacity: 0.5;
+            text-decoration: none;
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+
+        .fa-instagram {
+            background: linear-gradient(to top, #405DE6, #5851DB, #DD2A7B);
+            color: white;
+        }
+        @media (max-width: 767px) {
+            .mobile-address {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width:250px;
+            }
+        }
+    </style>
+
+    <div class="box">
+        <div class="route-detail py-4 mb-4 px-4 row fix-me">
+            <div class="col-md-12 row px-0 ml-5" id="box-container">
+                <div class="col-md-4  mb-3">
+                    <div class="text-start  ">
+                        <p class="tiny-text mb-0 color-main"><b>From</b></p>
+                        <p class="pickup-location mb-1">{{ content.fromCity }}</p>
+                        <p class="tiny-text mb-0 color-main"><b>Departure Date & Time</b></p>
+                        <p class="pickup-location mb-1">{{ content.fromDateTime.date|date('m-d-Y h:i A') }}</p>
+                    </div>
+                </div>
+                <div class="col-md-4  mb-3">
+{#                    <div class="trac-icon text-center">#}
+{#                        <img src="/images/icons/loc-icon.png" class="traking-icon disp-md" id="distanceimg" alt="fromTo icon">#}
+{#                    </div>#}
+                    <div class="trac-icon text-start">
+                        <p class="tiny-text mb-0 color-main"><b>Distance</b></p>
+                        <p class="pickup-location mb-1">{{ content.distanceMile|number_format(2) }} Mile(s)</p>
+                    </div>
+                </div>
+                <div class="col-md-4  mb-3">
+                    <div class="va-m text-start ">
+                        <p class="tiny-text mb-0 color-main"><b>To</b></p>
+                        <p class="pickup-location mb-1">{{ content.toCity }}</p>
+                        <p class="tiny-text mb-0 color-main"><b>Return Date & Time</b></p>
+                        <p class="pickup-location mb-1">{{ content.toDateTime.date|date('m-d-Y h:i A') }}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    {% for company in content.company|reverse %}
+        <div class="trip_card">
+            <div class="col-md-4 text-center">
+                <div class="">
+                    <div class="vehicle-img mx-auto ">
+                        <div class="vendor-name pt-3">
+                            <h4></h4>
+                        </div>
+                        <div class="vendor-name pt-3">
+                            <h4></h4>
+
+                        </div>
+                        <div class="profile-pic" style="width: 200px; height: 200px; overflow: hidden; border-radius: 50%;">
+                            {% if company.is_complete == null %}
+                                <img style="filter: blur(10px); width: 100%; height: 100%; object-fit: cover;"  alt="iPassenger" src="{{ url2png_v6(company.website_url) }}" onerror="this.src='/images/ipassenger-logo.png'; this.style.objectFit='contain'; this.style.width='100%'; this.style.height='100%';" >
+                            {% else %}
+                                <img style="filter: blur(0px); width: 100%; height: 100%; object-fit: cover;"  alt="eRideshare" src="{{ url2png_v6(company.website_url) }}" onerror="this.src='/images/ipassenger-logo.png'; this.style.objectFit='contain'; this.style.width='100%'; this.style.height='100%';" >
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="vehicle-type">
+                        {% if company.is_complete == null %}
+                              <p class="mb-0" style="filter: blur(10px); font-size: 25PX;"><b>{{ company.company_name }}</b></p>
+                          {% else %}
+                              <p class="mb-0" style="font-size: 25PX;"><b>{{ company.company_name }}</b></p>
+                        {% endif %}
+                        <p class="mb-0"><b>Vehicle Type: </b>{{ content.vehicleCategory }}</p>
+                        <p class="mb-0"><b>Vehicle Count: </b>{{ content.totalVehicle }}<span>&nbsp;of &nbsp;</span>{{ content.seatCapacity }} PAX</p>
+
+                    </div>
+                    <div class="vendor-name pt-3">
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-box col-md-8">
+                <div class="h-100p pt-2">
+                    <div class=" row driver-detail pt-1" style="background-color:white; color:#2a2a2a; ">
+                        <div class=" col-md-7 px-7 py-4 pb-2 info-container">
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Website: </b></p>
+                                    </div>
+                                    <div class="col-sm-4 ">
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0 mobile-address"><a>{{ (company.website_url|length > 35) ? company.website_url|slice(0, 35) ~ '...' : company.website_url }}</a></p>
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Website: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0 mobile-address"><a href="{{ company.website_url ?? "" }}" target="_blank">{{ (company.website_url|length > 35) ? company.website_url|slice(0, 5) ~ '...' : company.website_url }}</a></p>
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p  class=""><b>Contact: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="filter: blur(10px); white-space: nowrap;"  class="px-1 mb-0 mobile-address"><a>{{ company.contact_number  }}</a></p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p  class=""><b>Contact: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0 mobile-address"><a href="tel:{{ company.contact_number }}">{{ company.contact_number  }}</a></p>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Street Address: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0 mobile-address">{{ company.mailing_address | upper }}</p>
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Street Address: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0 mobile-address">{{ company.mailing_address | upper }}</p>
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>City: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0">{{ company.city | upper }}</p>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>City: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0">{{ company.city | upper }}</p>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>State: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0">{{ company.state }}</p>
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>State: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0">{{ company.state }}</p>
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Email: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0 mobile-address">{{ company.email_address }}</p>
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Email: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0 mobile-address">{{ company.email_address }}</p>
+
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Social Media: </b></p>
+                                    </div>
+                                    <div style="filter: blur(10px);" class="col-sm-4  d-flex align-items-center">
+                                        {% if company.facebook %}
+                                            <a href="#" class="fa fa-facebook"></a>
+                                        {% endif %}
+                                        {% if company.twitter %}
+                                            <a href="#" class="fa fa-twitter"></a>
+                                        {% endif %}
+                                        {% if company.whats_app %}
+                                            <a href="#" class="fa fa-instagram"></a>
+                                        {% endif %}
+                                        {% if company.linkedin %}
+                                            <a href="#" class="fa fa-linkedin"></a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Social Media: </b></p>
+                                    </div>
+                                    <div class="col-sm-4  d-flex align-items-center">
+                                {% if company.facebook %}
+                                        <a href="#" class="fa fa-facebook"></a>
+                                {% endif %}
+                                {% if company.twitter %}
+                                        <a href="#" class="fa fa-twitter"></a>
+                                {% endif %}
+                                {% if company.whats_app %}
+                                        <a href="#" class="fa fa-instagram"></a>
+                                {% endif %}
+                                {% if company.linkedin %}
+                                        <a href="#" class="fa fa-linkedin"></a>
+                                {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if company.is_complete == null %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Affiliated Associations: </b></p>
+                                    </div>
+                                    <div class="col-sm-4" >
+                                        <p style="filter: blur(10px);white-space: nowrap;" class="px-1 mb-0 mobile-address"></p>
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <p class=""><b>Affiliated Associations: </b></p>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <p style="white-space: nowrap;" class="px-1 mb-0 mobile-address"></p>
+
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div  class="text-center">
+                    <div  class="">
+                        <div  class="">
+                            {% if company.is_complete == null %}
+
+                                        {% if company.is_complete == null %}
+                                            {% if content.hourscount <= 5 %}
+
+                                                    <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+
+
+                                            {% endif %}
+                                            {% if content.hourscount > 5 and content.hourscount <= 24 %}
+
+                                                    <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                            {% endif %}
+                                            {% if content.hourscount > 24 %}
+
+                                                    <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+
+                                            {% endif %}
+                                        {% else %}
+                                            {% set has_vendor_price = false %}
+                                            {% for vendorprice in content.vendor_prices %}
+                                                {% if content.vendorprices.vendor_price_per_hour is not null and vendorprice.vendor_info_id == company.id %}
+                                                    {% if content.hourscount <= 5 %}
+                                                            <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_hour * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+                                                        {% set has_vendor_price = true %}
+                                                    {% endif %}
+                                                    {% if content.hourscount > 5 and content.hourscount <= 24 %}
+                                                            <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_hour * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+                                                        {% set has_vendor_price = true %}
+                                                    {% endif %}
+                                                    {% if content.hourscount > 24 %}
+                                                            <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+                                                        {% set has_vendor_price = true %}
+                                                    {% endif %}
+                                                {% endif %}
+                                            {% else %}
+                                                {% if content.hourscount <= 5 %}
+                                                        <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+                                                {% endif %}
+                                                {% if content.hourscount > 5 and content.hourscount <= 24 %}
+                                                        <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+                                                {% endif %}
+                                                {% if content.hourscount > 24 %}
+
+                                                        <p style=" filter: blur(10px);"><b><span class="price">$</span><span class="price">{{ content.default_price_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+
+
+                                    {% else %}
+
+                                                {% if company.is_complete == null %}
+                                                    {% if content.hourscount <= 5 %}
+
+                                                            <p style=""><b><span class="price">$</span><span class="price">{{ content.default_price * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+
+
+                                                    {% endif %}
+                                                    {% if content.hourscount > 5 and content.hourscount <= 24 %}
+
+                                                            <p style=""><b><span class="price">$</span><span class="price">{{ content.default_price * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                    {% endif %}
+                                                    {% if content.hourscount > 24 %}
+
+                                                            <p style=" "><b><span class="price">$</span><span class="price">{{ content.default_price_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                    {% endif %}
+                                                {% else %}
+                                                    {% set has_vendor_price = false %}
+                                                    {% for vendorprice in content.vendor_prices %}
+                                                        {% if vendorprice.vendor_price_per_hour is not null and vendorprice.vendor_info_id == company.id %}
+                                                            {% if content.hourscount <= 5 %}
+
+
+                                                                    <p style=""><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_hour * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                                {% set has_vendor_price = true %}
+                                                            {% endif %}
+
+                                                            {% if content.hourscount > 5 and content.hourscount <= 24 %}
+
+                                                                    <p style=""><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_hour * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                                {% set has_vendor_price = true %}
+                                                            {% endif %}
+                                                            {% if content.hourscount > 24 %}
+
+                                                                    <p style=""><b><span class="price">$</span><span class="price">{{ vendorprice.vendor_price_per_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                                {% set has_vendor_price = true %}
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    {% else %}
+                                                        {% if content.hourscount <= 5 %}
+
+                                                                <p style=" "><b><span class="price">$</span><span class="price">{{ content.default_price * 5 * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                        {% endif %}
+                                                        {% if content.hourscount > 5 and content.hourscount <= 24 %}
+
+                                                                <p style=" "><b><span class="price">$</span><span class="price">{{ content.default_price * content.hourscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                        {% endif %}
+                                                        {% if content.hourscount > 24 %}
+
+                                                                <p style=""><b><span class="price">$</span><span class="price">{{ content.default_price_day * content.dayscount * 1.1 * content.totalVehicle }}</span></b></p>
+
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+
+
+
+                                            {% endif %}
+
+
+                            {% if company.is_complete == null %}
+                                <div style="" class="">
+                                    <a href="#">
+                                        <button style="background-color: #33691E; padding-top:10px; padding-bottom: 10px; padding-right:20px; padding-left:20px; border: none; border-radius: 5px;" class=" text-white mb-3" disabled><b>Book</b></button>
+
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="">
+                                    <a href="">
+                                        <button style="background-color: #33691E; padding-top:10px; padding-bottom: 10px; padding-right:20px; padding-left:20px; border: none; border-radius: 5px;" class=" text-white mb-3"><b>Book</b></button>
+                                    </a>
+                                </div>
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+

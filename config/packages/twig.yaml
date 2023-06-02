@@ -1,0 +1,12 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        apple_client_id: '%env(APPLE_CLIENT_ID)%'
+        apple_redirect_uri: '%env(APPLE_REDIRECT_URI)%'
+        facebook_id : '%env(OAUTH_FACEBOOK_ID)%'
+        facebook_secret: '%env(OAUTH_FACEBOOK_SECRET)%'
+
+
+when@test:
+    twig:
+        strict_variables: true

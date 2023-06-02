@@ -1,0 +1,449 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Change Password!{% endblock %}
+
+{% block body %}
+    <style>
+        body{
+            width: 100%;
+            background-color: #e9eaef;
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        .container{
+            background-color: #e0e0e3;
+            border-radius: 30px;
+            max-width: 100%;
+            width: 95%;
+            margin: 20px auto;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+        }
+        .form{
+            background-color: #ffffff;
+            border-radius: 30px;
+            width: 25%;
+            height: 70%;
+            margin: 30px auto;
+            margin-left: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .detail{
+            padding: 30px;
+        }
+        .box-header {
+            background-color: #34582a;
+            color: #ffffff;
+            text-align: left;
+            padding-top: 15px;
+            padding-left: 30px;
+            font-weight: 700;
+            border-radius: 30px 30px 0px 0px;
+            width: 100%;
+            height: 50px;
+        }
+        .box {
+            background-color: #d5d4d4;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            text-align: center;
+            width: 67%;
+            height: 30%;
+            margin-top: 30px;
+            margin-right: 40px;
+        }
+        .change{
+            margin: 20px 0;
+        }
+        #button{
+            background-color: #699f47;
+            color: #fff;
+            padding: 1% 44.5%;
+            text-align: center;
+            position: relative;
+            top: -20px;
+            font-weight: 400;
+            border: none;
+            cursor: pointer;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            height: 55px;
+            padding-top: 40px;
+        }
+        .logo{
+            position: relative;
+            top: -30px;
+            right: 10px;
+        }
+        .text{
+            text-align: center;
+            font-weight: 400;
+        }
+        .form-control{
+            font-weight: 400;
+            font-size: 13px;
+            padding: 10px;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            padding-bottom: 40%;
+            background-color: #699f47;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .div{
+            position: relative;
+            left: 15px;
+        }
+        .CNP{
+            position: relative;
+            right: 15px;
+        }
+        @media only screen and (max-width: 1100px){
+            #button {
+                padding: 1% 42%;
+            }
+        }
+        @media only screen and (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .form {
+                width: 100%;
+                margin: 20px 0;
+                padding: 20px;
+            }
+
+            .box {
+                width: 100%;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+
+            .profile-pic {
+                width: 250px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+        }
+
+        @media only screen and (max-width: 989px){
+            .profile-pic {
+                width: 250px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            .form {
+                margin-left: 0;
+            }
+            .box {
+                width: 100%;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+            .detail{
+                padding: 20px;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+            .div{
+                position: relative;
+                left: -1px;
+            }
+            .CNP{
+                position: relative;
+                left: 1px;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            .container {
+                padding: 20px;
+            }
+            .box {
+                padding: 0 0px 30px 0px;
+            }
+
+            #button {
+                padding: 1% 42%;
+            }
+            .profile-pic {
+                width: 200px;
+                height: 200px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .div{
+                position: relative;
+                left: -1px;
+            }
+            .CNP{
+                position: relative;
+                left: 1px;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .box {
+                padding: 0 0px 30px 0px;
+            }
+
+            #button {
+                padding: 2% 38%;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+            .div{
+                position: relative;
+                left: -1px;
+            }
+            .CNP{
+                position: relative;
+                left: 1px;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+            #button {
+                padding: 2% 37%;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box{
+                padding: 0 0px 30px 0px;
+            }
+        }
+        @media only screen and (max-width: 160px) {
+            .profile-pic {
+                width: 50px;
+                height: 50px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+            #button{
+                background-color: #699f47;
+                color: #fff;
+                padding: 1% 2%;
+                text-align: center;
+                font-weight: 400;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        @media only screen and (max-width: 120px) {
+            .profile-pic {
+                width: 15px;
+                height: 15px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 2px;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+        }
+        @media only screen and (max-width: 70px){
+            .profile-pic {
+                width: 15px;
+                height: 15px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 2px;
+            }
+            .box-header {
+                text-align: left;
+                padding-top: 15px;
+                padding-left: 3px;
+                font-weight: 700;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 50px;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="form">
+            <div class="profile-pic"></div>
+            <br>
+            <div class="text">
+                <a href="#"><img src="/images/icons/chats.png" width="20px" class="float-left" height="20px" alt="">Chat</a>
+                <hr>
+                <a href="/bookings"><img src="/images/icons/dbl1.png" width="20px" class="float-left" height="20px" alt="">Bookings</a>
+                <hr>
+                <a href="/user/profile"><img src="/images/icons/dbl6.png" width="20px" class="float-left" height="20px" alt="">My Profile</a>
+                <hr>
+                <a href="/change/password"><img src="/images/icons/db20.png" width="20px" class="float-left" height="20px" alt=""> Change Password</a>
+                <hr>
+                <a href="/payments"><img src="/images/icons/dbl9.png" width="20px"  class="float-left" height="20px" alt="">Payments</a>
+                <hr>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <p>Change Password</p>
+            </div>
+            <div class="detail">
+                <form class="row g-2">
+                    <div class="div col-12 col-md-4">
+                        <input type="password" class="form-control" id="" placeholder="Current Password" />
+                        <img src="/images/icons/eye-on.png" width="20px" class="logo float-right" height="20px" alt="">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <input type="password" class="form-control" id="" placeholder="New Password" />
+                        <img src="/images/icons/eye-on.png" width="20px" class="logo float-right" height="20px" alt="">
+                    </div>
+                    <div class="CNP col-12 col-md-4">
+                        <input type="password" class="form-control" id="" placeholder="Confirm New Password" />
+                        <img src="/images/icons/eye-on.png" width="20px" class="logo float-right" height="20px" alt="">
+                    </div>
+                    <div class="col-12">
+                        <br>
+                        <center>
+                            <button type="submit" class="" id="button">SUBMIT</button>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

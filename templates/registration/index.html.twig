@@ -1,0 +1,354 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration{% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            background-color: #e8e9ed;
+            font-family: 'Myriad Pro', sans-serif;
+            font-weight: 400;
+        }
+
+        #form_container {
+            background-color: #aec799;
+            border-radius: 40px;
+            width: 60%;
+            padding: 2%;
+            height: 40%;
+            margin: 0 auto;
+        }
+
+        .button {
+            background-color: #335528 !important;
+            color: #fff;
+            padding: 4px 20%;
+            font-weight: 700;
+            text-align: center;
+            width: auto;
+            margin-top: 10px;
+        }
+
+        .soc-btn a {
+            color: #fff;
+            padding: 5px 50px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .facebook-btn {
+            background-color: #3a5997;
+        }
+
+        .google-btn {
+            background-color: #dd4b39;
+        }
+
+        .apple-btn {
+            background-color: #000000;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        nav {
+            background-color: #f9f9fb;
+        }
+
+        .logo{
+            position: relative;
+            top: 30px;
+            right: 10px;
+            margin-top: -10px;
+        }
+        .apple-logo{
+            position: relative;
+            top: 1px;
+        }
+        .google-logo{
+            position: relative;
+            top: 1px;
+            right: 2px;
+        }
+
+        .text-heading {
+            color: #36582a;
+        }
+
+        .form-control {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #btn {
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        .login-btn {
+            color: black;
+        }
+
+        hr {
+            width: 30%;
+            background-color: #465d38;
+        }
+        /* Responsive styles */
+
+        @media only screen and (max-width: 992px) {
+            #form_container {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 850px) {
+            #form_container {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            #form_container {
+                width: 90%;
+            }
+
+            .soc-btn a {
+                padding: 10px 30px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .soc-btn a {
+                padding: 10px 20px;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+            .soc-btn a {
+                padding: 10px 10px;
+            }
+        }
+        #captchaInput {
+            width: 2.5em;
+            margin-left: .5em;
+        }
+        .center-label {
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Ensure the label doesn't interfere with input field interaction */
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    {% for flashMessage in app.flashes('error') %}
+        <div style="width: 500px; text-align: center; position: fixed; left: 50%; transform: translateX(-50%);" class="alert alert-success">{{ flashMessage }}</div>
+    {% endfor %}
+    <div class="text-heading mt-2">
+        <center>
+            <h1>Create an Account</h1>
+        </center>
+    </div>
+    <div>
+        <div class="container" id="form_container">
+            <form class="row g-2" action="/register" method="POST">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="firstName" id="" placeholder="First Name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="lastName" id="" placeholder="Last Name" required>
+                </div>
+                <div class="col-12">
+                    <input type="email" class="form-control" name="email" id="" placeholder="Email Id" required>
+                    <small id="emailExists" class="text-danger" style="display: none;">Email already exists.</small>
+                </div>
+                <div class="col-12">
+                    <div class="password-input">
+                        <img src="/images/icons/eye-on.png" width="20px" class="logo float-right password-toggle" height="20px"  alt="Toggle Password">
+                        <input type="password" class="form-control" name="plainPassword" id="" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="password-input">
+                        <img src="/images/icons/eye-on.png" width="20px" class="logo float-right password-toggle" height="20px" alt="Toggle Password">
+                        <input type="password" class="form-control" name="cpass" id="" placeholder="Confirm Password" required>
+                    </div>
+                        <small id="passwordMismatch" class="text-danger" style="display: none;">Passwords must match.</small>
+
+                </div>
+                <div class="col-12">
+                    <div class="form-group position-relative">
+                        <input type="text" id="captcha" oninput="checkCaptcha(this)" class="validate form-control" required>
+                        <label id="captchaInputQuestion" class="center-label">Math Captcha</label>
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px;" class="col-12">
+                    <div style=" display: flex;justify-content: center;align-items: center; marting-top:15px;" class="g-recaptcha" data-sitekey="6Lf4y0klAAAAAHkqYhFvsCTzBoiUv5ylgjLwkCh7"></div>
+                </div>
+                <div class="col-12">
+                    <center>
+                        <button type="submit" class="button" id="btnSubmit"  disabled>SIGN UP</button>
+                    </center>
+                </div>
+            </form>
+        </div>
+        <center>
+            <hr size="5" />
+        </center>
+    </div>
+    <center>
+
+        <div class="text-heading">
+            <h1>Sign in using</h1>
+        </div>
+
+        <div class="soc-btn">
+            <a id="btnSubmit" href="{{ path('connect_facebook_start') }}" class="facebook-btn"><img src="/images/icons/facebook.png" width="20px" class="float-left" height="20px" alt="">Facebook</a>
+            <a id="btnSubmit" href="{{ path('connect_google_start') }}" class="google-btn"><img src="/images/icons/google.png" width="20px" class="google-logo float-left" height="20px" alt="">Google</a>
+            <br>
+{#            <a id="btnSubmit" href="#" class="apple-btn"><img src="/images/icons/apples.png" width="20px" class="apple-logo float-left" height="20px" alt="">Sign in with Apple</a>#}
+        </div>
+        <script type="text/javascript"
+                src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+        <ul>
+
+            <li>
+                <div style="height: 40px; width: 200px; margin-top: 5px; margin-right: 30px; border-radius: 0px;" id="appleid-signin" data-color="black" data-type="sign in"></div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            AppleID.auth.init({
+                clientId: '{{ apple_client_id }}',
+                scope: 'name email',
+                redirectURI: '{{ apple_redirect_uri }}',
+                state: 'code id_token'
+            });
+        </script>
+        <p class="mt-1">
+            <span class="">Are you already a member?&nbsp;Click to&nbsp;<a href="/login" class="text-dark"><b>login</b></a></span>
+        </p>
+
+    </center>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        // Add the following code to your JavaScript file
+        document.getElementById("btnSubmit").addEventListener("click", function(event) {
+            var response = grecaptcha.getResponse();
+            if(response.length == 0) {
+                event.preventDefault();
+                alert("Please complete the captcha");
+            }
+        });
+    </script>
+
+
+        <script language='javascript' type='text/javascript'>
+            function checkCaptcha(input) {
+                var label = document.getElementById('captchaInputQuestion');
+                if (input.value !== '') {
+                    label.style.visibility = 'hidden';
+                } else {
+                    label.style.visibility = 'visible';
+                }
+            if (input.value != localStorage.fuCaptcah) {
+            input.setCustomValidity('WRONG!');
+        } else {
+            document.getElementById('btnSubmit').disabled = false;
+            // var element = document.getElementById("captchaInputQuestionDiv");
+            // element.parentNode.removeChild(element);
+            input.setCustomValidity('');
+        }
+        }
+
+    </script>
+    <script>
+        // $(function() {
+        //     // console.log( "ready!" );
+        //     $('#registration_form').captcha();
+        // });
+
+        const oneCp = Math.ceil(Math.random() * 15);
+        const twoCp = Math.ceil(Math.random() * 9);
+        localStorage.fuCaptcah = oneCp + twoCp
+        document.getElementById('captchaInputQuestion').innerText = oneCp + '+' + twoCp + '=?'
+
+    </script>
+    <script>
+        function checkPasswordMatch() {
+            var password = document.querySelector('input[name="plainPassword"]').value;
+            var confirmPassword = document.querySelector('input[name="cpass"]').value;
+            var passwordMismatch = document.getElementById('passwordMismatch');
+            var signUpButton = document.getElementById('btnSubmit');
+
+            if (password !== confirmPassword) {
+                passwordMismatch.style.display = 'block';
+                signUpButton.disabled = true;
+            } else {
+                passwordMismatch.style.display = 'none';
+                signUpButton.disabled = false;
+            }
+        }
+
+        document.querySelector('input[name="plainPassword"]').addEventListener('input', checkPasswordMatch);
+        document.querySelector('input[name="cpass"]').addEventListener('input', checkPasswordMatch);
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var emailInput = document.querySelector('input[name="email"]');
+            var emailExistsMessage = document.getElementById('emailExists');
+            var signUpButton = document.getElementById('btnSubmit');
+
+            emailInput.addEventListener('blur', function() {
+                var email = emailInput.value;
+                // Send an AJAX request to the server to check if the email exists
+                // Replace the placeholder URL with the actual endpoint for checking email existence
+                fetch('/check-email-exists?email=' + encodeURIComponent(email))
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        if (data.exists) {
+                            emailExistsMessage.style.display = 'block';
+                            signUpButton.disabled = true;
+                        } else {
+                            emailExistsMessage.style.display = 'none';
+                            signUpButton.disabled = false;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                    });
+            });
+
+
+
+            var passwordInputs = document.getElementsByClassName('password-input');
+            Array.from(passwordInputs).forEach(function(passwordInput) {
+                var passwordField = passwordInput.querySelector('input[type="password"]');
+                var toggleButton = passwordInput.querySelector('.password-toggle');
+
+                toggleButton.addEventListener('click', function() {
+                    if (passwordField.type === 'password') {
+                        passwordField.type = 'text';
+                        toggleButton.src = '/images/icons/eye-off.png';
+                    } else {
+                        passwordField.type = 'password';
+                        toggleButton.src = '/images/icons/eye-on.png';
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

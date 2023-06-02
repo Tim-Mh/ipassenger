@@ -1,0 +1,505 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Profile!{% endblock %}
+
+{% block body %}
+
+    <style>
+        body{
+            width: 100%;
+            background-color: #e9eaef;
+            font-family: 'Myriad Pro', sans-serif;
+        }
+        .container{
+            background-color: #e0e0e3;
+            border-radius: 30px;
+            max-width: 100%;
+            width: 95%;
+            margin: 10px auto;
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+        }
+        .form{
+            background-color: white;
+            border-radius: 30px;
+            width: 25%;
+            height: 70%;
+            margin: 50px auto;
+            margin-left: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .detail{
+            padding: 0px 70px 30px 70px;
+        }
+        .form-control{
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        .box-header {
+            background-color: #34582a;
+            color: #ffffff;
+            text-align: left;
+            padding-top: 15px;
+            padding-left: 80px;
+            font-weight: 700;
+            border-radius: 30px 30px 0px 0px;
+            width: 100%;
+            height: 50px;
+        }
+        .box {
+            background-color: #d5d4d4;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            text-align: center;
+            width: 70%;
+            margin: 50px auto;
+            padding: 0 0px 30px 0px;
+        }
+        #button{
+            background-color: #699f47;
+            color: #fff;
+            padding: 0.8% 4%;
+            text-align: center;
+            float: right;
+            border: none;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        #btn{
+            background-color: #ffffff;
+            color: #699f47;
+            padding: 0.8% 4%;
+            float: right;
+            text-align: center;
+            border: 1px solid #699f47;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        #bt{
+            position: relative;
+            top: -23px;
+            left: -15px;
+        }
+        a{
+            color: black;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            height: 55px;
+            padding-top: 40px;
+        }
+        .text{
+            text-align: center;
+            font-weight: 400;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            padding-bottom: 40%;
+            background-color: #699f47;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        #cscp{
+            text-align: center;
+        }
+        .first{
+            padding-right: 5px;
+        }
+        .last{
+            padding-left: 5px;
+        }
+        .city{
+            padding-right: 5px;
+        }
+        .state{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .country{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .postcode{
+            padding-left: 5px;
+        }
+        input[type=file]::file-selector-button {
+            margin-right: 20px;
+            border: none;
+            background: #699f47;
+            padding: 10px 58px;
+            position: relative;
+            margin-top: 10px;
+            left: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .form {
+                width: 100%;
+                margin: 20px 0;
+                padding: 20px;
+            }
+
+            .box {
+                width: 100%;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+            .box-header {
+                background-color: #34582a;
+                color: #ffffff;
+                text-align: left;
+                padding-top: 10px;
+                padding-left: 30px;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 45px;
+            }
+
+            .profile-pic {
+                width: 250px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width:850px) {
+            .profile-pic {
+                width: 250px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box{
+                padding: 0 0px 30px 0px;
+            }
+        }
+
+        @media only screen and (max-width: 576px) {
+            .form {
+                margin-left: 0;
+            }
+
+            .box {
+                width: 100%;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                border-radius: 40px;
+                text-align: center;
+                margin: 50px auto 40%;
+                padding: 0 0px 30px 0px;
+            }
+            .detail{
+                padding: 20px;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .first{
+                padding-right: 15px;
+            }
+            .last{
+                padding-left: 15px;
+            }
+            .city{
+                padding-right: 15px;
+            }
+            .state{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .country{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .postcode{
+                padding-left: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .form {
+                width: 100%;
+                max-width: 500px;
+            }
+            .box{
+                width: 100%;
+                max-width: 500px;
+                padding: 0 0px 30px 0px;
+
+            }
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .box {
+                padding: 0 0px 30px 0px;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .first{
+                padding-right: 15px;
+            }
+            .last{
+                padding-left: 15px;
+            }
+            .city{
+                padding-right: 15px;
+            }
+            .state{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .country{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .postcode{
+                padding-left: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 380px){
+            .first{
+                padding-right: 15px;
+            }
+            .last{
+                padding-left: 15px;
+            }
+            .city{
+                padding-right: 15px;
+            }
+            .state{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .country{
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .postcode{
+                padding-left: 15px;
+            }
+        }
+
+        @media only screen and (max-width: 360px) {
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .box{
+                padding: 0 0px 30px 0px;
+            }
+            input[type=file]::file-selector-button {
+                margin-right: 20px;
+                border: none;
+                background: #699f47;
+                padding: 10px 5px;
+                position: relative;
+                margin-top: 10px;
+                left: 20px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        @media only screen and (max-width: 290px) {
+            input[type=file]::file-selector-button {
+                margin-right: 20px;
+                border: none;
+                background: #699f47;
+                padding: 10px 2px;
+                position: relative;
+                margin-top: 10px;
+                left: 20px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        @media only screen and (max-width: 160px) {
+            .profile-pic {
+                width: 50px;
+                height: 50px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            input[type=file]::file-selector-button {
+                margin-right: 20px;
+                border: none;
+                background: #699f47;
+                padding: 10px 2px;
+                position: relative;
+                margin-top: 10px;
+                left: 20px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+
+        @media only screen and (max-width: 120px) {
+            .profile-pic {
+                width: 30px;
+                height: 30px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 11px;
+            }
+            input[type=file]::file-selector-button {
+                margin-right: 20px;
+                border: none;
+                background: #699f47;
+                padding: 10px 5px;
+                position: relative;
+                margin-top: 10px;
+                left: 20px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        @media only screen and (max-width: 70px){
+            .profile-pic {
+                width: 15px;
+                height: 15px;
+                padding-bottom: 40%;
+                background-color: #699f47;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .text{
+                text-align: center;
+                font-weight: 400;
+                font-size: 2px;
+            }
+            .box-header {
+                text-align: left;
+                padding-top: 15px;
+                padding-left: 3px;
+                font-weight: 700;
+                border-radius: 30px 30px 0px 0px;
+                width: 100%;
+                height: 50px;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="form">
+            <div class="profile-pic"></div>
+            <br>
+            <div class="text">
+                <a href="#"><img src="/images/icons/chats.png" width="20px" class="float-left" height="20px" alt="">Chat</a>
+                <hr>
+                <a href="/bookings"><img src="/images/icons/dbl1.png" width="20px" class="float-left" height="20px" alt="">Bookings</a>
+                <hr>
+                <a href="/user/profile"><img src="/images/icons/dbl6.png" width="20px" class="float-left" height="20px" alt="">My Profile</a>
+                <hr>
+                <a href="/change/password"><img src="/images/icons/db20.png" width="20px" class="float-left" height="20px" alt=""> Change Password</a>
+                <hr>
+                <a href="/payments"><img src="/images/icons/dbl9.png" width="20px"  class="float-left" height="20px" alt="">Payments</a>
+                <hr>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-header">
+                <p>Edit My Profile</p>
+            </div>
+            <br>
+            <div class="detail">
+                <form class="row g-2">
+                    <div class="first col-md-6">
+                        <input type="text" class="form-control" id="" placeholder="First Name">
+                    </div>
+                    <div class="last col-md-6">
+                        <input type="text" class="form-control" id="" placeholder="Last Name" />
+                    </div>
+                    <div class="col-md-12">
+                        <input type="tel" class="form-control" id="" placeholder="Phone" />
+                    </div>
+                    <div class="col-md-12">
+                        <textarea class="form-control" id="" rows="3" placeholder="Address:"></textarea>
+                    </div>
+                    <div class="city col-md-3">
+                        <input type="text" class="form-control" id="cscp" placeholder="City" />
+                    </div>
+                    <div class="state col-md-3">
+                        <input type="text" class="form-control" id="cscp" placeholder="State" />
+                    </div>
+                    <div class="country col-md-3">
+                        <input type="text" class="form-control" id="cscp" placeholder="Country" />
+                    </div>
+                    <div class="postcode col-md-3">
+                        <input type="text" class="form-control" id="cscp" placeholder="Postcode" />
+                    </div>
+                    <div class="file">
+                        <input type="file" accept="image/*">
+                    </div>
+                    <div class="col-12">
+                        <br>
+                        <button type="button" class="float-end" id="btn">Cancel</button>
+                        <div class="col-12" id="bt">
+                            <br>
+                            <button type="submit" class="" id="button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

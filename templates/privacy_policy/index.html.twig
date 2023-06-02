@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Privacy Policy{% endblock %}
+
+{% block stylesheets %}
+
+    <style type="text/css">
+        /*.pac-container:after {
+            !*Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown*!
+            background-image: none !important;
+            height: 0px;
+        }*/
+        section{
+            background-image: url('/images/face.jpg');
+
+        }
+        .card {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .card-body {
+            /*padding:100px;*/
+            padding-right: 100px;
+            padding-left: 100px;
+        }
+        .text-center{
+            font-size: 24px;
+            margin: 17px 0 30px;
+            font-weight: bold;
+            color: #33691E;
+            font-family: "Quicksand", sans-serif;
+        }
+        .card-body p{
+            font-weight: 400;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.5pc;
+            font-size: .151041667in;
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 767px) {
+            .card {
+                width: 90%;
+                padding: 20px;
+            }
+            .card-body {
+                width: 90%;
+                padding: 5px;
+            }
+        }
+        .dropdown:hover .dropdown-menu {
+            display: none;
+        }
+
+        .main-menu-v2 ul {
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+
+    <!--DASHBOARD-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Privacy Policy</h2>
+                           <p>This is the privacy policy for all United States Transit Funding, Inc. technology products, including the eMotorcoach©, ePassenger©, iPassenger© and eLimousines© product lines.
+                           </p>
+                            <p>We are a strong believer and implement security solutions to protect your private data of which includes all data that is shared with us through our technology products in accordance to United States laws and international General Data Protection Regulations that we anticipate being codified into practice in the United States.</p>
+                            <p>When you utilize the myriad of technologies that are offered by United States Transit Funding, Inc., we will be using all necessary firewall and SSL technologies needed to avert attacks across server networks while striving to maintain network redundancy across our products.</p>
+                            <p>As a part of our technology product lines, and for the benefit of both customers and consumers, we will work with you to help ensure that IF there is an attempt to mitigate our confidential security protocols that you are immediately notified and to ensure that any mitigation of data is reported immediately.</p>
+                            <p>In other words, we will work diligently and effectively to mitigate any data intrusion and help make sure that your experience across each of our technology products is secure and enjoyable.</p>
+                            <p>We will never sell or share customer or consumer data either. That is not why we are here. We are here to connect you with an array of transportation options.</p><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--END DASHBOARD-->
+{% endblock %}
+

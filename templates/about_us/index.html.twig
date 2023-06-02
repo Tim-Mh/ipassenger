@@ -1,0 +1,1398 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    About Us | iPassenger
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+
+{% block stylesheets %}
+    <style>
+        /* CLIENT-SPECIFIC STYLES ------------------- */
+
+        table {
+            width: inherit !important;
+        }
+
+        table td {
+            text-align: center !important;
+        }
+
+        /* Force Outlook to provide a "view in browser" message */
+
+        #outlook a {
+            padding: 0;
+        }
+
+        /* Force Hotmail to display emails at full width */
+
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        /* Force Hotmail to display emails at full width */
+
+        .ExternalClass {
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+
+        /* Force Hotmail to display normal line spacing */
+
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {
+            line-height: 100%;
+        }
+
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Remove spacing between tables in Outlook 2007 and up */
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        \
+
+        /* Allow smoother rendering of resized image in Internet Explorer */
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+
+        /* RESET STYLES --------------------------- */
+
+
+        html {
+            width: 100%;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0; /*padding: 0;*/
+            width: 100% !important;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        img:hover {
+            opacity: 0.9 !important;
+        }
+
+        table {
+            border-collapse: collapse !important;
+            border-spacing: 0;
+            table-layout: fixed;
+            margin: 0 auto;
+        }
+
+        table table table {
+            table-layout: auto;
+        }
+
+
+        /* iOS BLUE LINKS */
+
+
+        .apple-links a {
+            color: #39562A !important;
+            text-decoration: none !important;
+        }
+
+
+        /* MOBILE STYLES ------------------------ */
+
+
+        @media only screen and (max-width: 600px) {
+
+            body {
+                width: auto !important;
+            }
+
+            table td {
+                width: 100% !important;
+            }
+
+            img[class="fluid-image"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            table[class="wrapper"] {
+                width: 100% !important;
+            }
+
+            *[class="table-inner"] {
+                width: 90% !important;
+                text-align: center !important;
+            }
+
+            *[class="table-inner-small"] {
+                width: 60% !important;
+                text-align: center !important;
+            }
+
+            *[class="table-full"] {
+                width: 100% !important;
+                text-align: center !important;
+            }
+
+            td[class="fluid-image"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            td[class="mobile-button"] {
+                padding: 0 30px;
+            }
+
+            td[class="mobile-links"] {
+                text-align: center !important;
+            }
+
+            td[class="mobile-title"] {
+                font-size: 14px !important;
+                line-height: 20px !important;
+            }
+
+            img[class="resized-btn"] {
+                width: 45px !important;
+                height: auto !important;
+            }
+
+            .table-inner {
+                width: 90% !important;
+                text-align: center !important;
+            }
+
+            .mobile-button {
+                padding: 0 30px;
+            }
+
+            .mobile-title {
+                font-size: 16px !important;
+                line-height: 20px !important;
+            }
+
+            img.fluid-image {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            td[class="resized-btn"] {
+                width: 40px !important;
+                height: auto !important;
+            }
+
+            .resized-btn {
+                width: 32px !important;
+                height: auto !important;
+            }
+
+            .custom-height {
+                height: auto !important;;
+            }
+
+        }
+        section{
+            background-image: url('/images/face.jpg');
+
+        }
+
+    </style>
+{% endblock %}
+
+{% block chat %}
+    <div></div>
+{% endblock %}
+
+{% block body %}
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                <h3 style="text-align: center; margin-top: 50px; font-size: 24px; font-weight: bold;color: #33691E;">ABOUT US</h3>
+
+
+            <!-- CONTAINER TABLE -->
+            <!--header-->
+            <table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="table-layout: fixed;">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center">
+                                    <table class="table-inner" width="100%" align="center" border="0" cellpadding="0"
+                                           cellspacing="0">
+                                        <tr>
+                                            <!-- Top Border -->
+                                        <tr>
+                                            <td bgcolor="#335528" height="8"></td>
+                                        </tr>
+                                        <!-- LOGO -->
+                                        <tr>
+                                            <td>
+                                                <table width="100%" border="0" align="center" cellpadding="0"
+                                                       cellspacing="0" bgcolor="#ffffff"
+                                                       style="padding: 20px 0 20px 0;">
+                                                    <tr>
+                                                        <td align="center">
+                                                            <img src="/images/aboutus/1.jpg"
+                                                                 alt="United States Transit Funding, Inc." width="100%"
+                                                                 height="auto"
+                                                                 style="display: block; color: #335528; font-family: Roboto, Arial, Sans-serif; font-weight: 100 !important; font-size: 30px; background-color: #ffffff; line-height: 36px; text-align: center;"
+                                                                 class="fluid-image">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end header-->
+
+            <!-- CONTAINER TABLE -->
+            <!--1/1 content-->
+            <table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="table-layout: fixed;">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center">
+                                    <table class="table-inner" width="100%" align="center" border="0" cellpadding="0"
+                                           cellspacing="0">
+                                        <tr>
+                                            <td align="center" background="https://i.imgur.com/xx6xAs3.jpg"
+                                                bgcolor="#335528"
+                                                style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center;">
+                                                <table align="center" width="90%" border="0" cellspacing="0"
+                                                       cellpadding="0">
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                    <!--title-->
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="font-family: Century gothic, Arial, sans-serif; font-size: 16px; color: #ffffff;font-weight: 50;line-height: 20px;padding:0px 20px 0px 20px;"
+                                                            class="mobile-title">Developing the Next Generation of
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="font-family: Century gothic, Arial, sans-serif; font-size: 16px; color: #ffffff;font-weight: 50;line-height: 20px;padding:0px 20px 0px 20px;"
+                                                            class="mobile-title">Uber-Like Technologies & Business
+                                                            Services
+                                                        </td>
+                                                    </tr>
+                                                    <!--end title-->
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+                                                    <!--dash-->
+                                                    <tr>
+                                                        <td align="center">
+                                                            <table align="center" width="40" bgcolor="#ffffff"
+                                                                   style="border-radius:10px;background:#fff;width:40px !important;"
+                                                                   border="0"
+                                                                   cellpadding="0" cellspacing="0">
+                                                                <tr>
+                                                                    <td align="center" height="5"
+                                                                        style="line-height:0px; font-size:0px;padding:2px 20px 2px 20px;">
+                                                                        &nbsp;
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!--end dash-->
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+                                                    <!--content-->
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="font-family:  Century Gothic, arial,sans-serif; font-size: 14px; color: #ffffff; line-height: 20px; font-weight: 100;padding:0px 20px 0px 20px;">
+                                                            United States Transit Funding, Inc. proudly serves the
+                                                            USDOT-regulated motorcoach and transit industry with a suite
+                                                            of business services and technology products<br><br>In the
+                                                            last five years, we have completed a number of
+                                                            accomplishments because of your trust in our desire to serve
+                                                            you, your employees and your passengers
+                                                        </td>
+                                                    </tr>
+                                                    <!--end content-->
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end 1/1 content-->
+
+            <!-- CONTAINER TABLE -->
+            <!--1/1 content-->
+            <table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="table-layout: fixed;">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center">
+                                    <table class="table-inner" bgcolor="#FFFFFF" width="100%" align="center" border="0"
+                                           cellpadding="0" cellspacing="0" style="background:#F8F8F8;">
+                                        <tr>
+                                            <td align="center" width="">
+                                                <table class="table-inner" align="center" border="0" cellpadding="0"
+                                                       cellspacing="0">
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td bgcolor="#F8F9F4" align="center"
+                                                            style="text-align:center;vertical-align:top;font-size:0;border:1px solid #E1E1E1;">
+                                                            <!--end left-->
+                                                            <!--[if (gte mso 9)|(IE)]>
+                                                            </td>
+                                                            <td align="center"
+                                                                style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <![endif]-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td bgcolor="#F8F8F8" align="center"
+                                                                            width="550">
+                                                                            <table width="90%" align="center" border="0"
+                                                                                   cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <table width="100%"
+                                                                                               align="center" border="0"
+                                                                                               cellspacing="0"
+                                                                                               cellpadding="0">
+                                                                                            <tr>
+                                                                                                <td height="15"></td>
+                                                                                            </tr>
+                                                                                            <!-- title -->
+                                                                                            <tr>
+                                                                                                <td align="center"
+                                                                                                    style="font-family: Century Gothic, arial, sans-serif; font-size: 16px; color: #4A4A4A; line-height: 16px;font-weight: normal;">
+                                                                                                    Follow Us On Any Of
+                                                                                                    These Social Media
+                                                                                                    Channels:
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <!-- end title -->
+                                                                                            <tr>
+                                                                                                <td height="15"></td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                        <table width="100%"
+                                                                                               align="center" border="0"
+                                                                                               cellspacing="0"
+                                                                                               cellpadding="0">
+                                                                                            <tr>
+                                                                                                <td align="center">
+                                                                                                    <table class="table-inner-small"
+                                                                                                           width="50%"
+                                                                                                           align="center"
+                                                                                                           border="0"
+                                                                                                           cellspacing="0"
+                                                                                                           cellpadding="0">
+                                                                                                        <td align="center"
+                                                                                                            style="line-height: 0px;padding:10px;">
+                                                                                                            <a href="http://www.facebook.com/transitfunding"><img
+                                                                                                                        width="50"
+                                                                                                                        height="50"
+                                                                                                                        class="resized-btn"
+                                                                                                                        src="/images/aboutus/2.png"
+                                                                                                                        style="display:block; line-height:12px; font-size:9px; color: #999999;"
+                                                                                                                        alt="facebook"/></a>
+                                                                                                        </td>
+                                                                                                        <td align="center"
+                                                                                                            style="line-height: 0px;padding:10px;">
+                                                                                                            <a href="http://www.twitter.com/transit_funding"><img
+                                                                                                                        width="50"
+                                                                                                                        height="50"
+                                                                                                                        class="resized-btn"
+                                                                                                                        src="/images/aboutus/3.png"
+                                                                                                                        alt="twitter"
+                                                                                                                        style="display:block; line-height:12px; font-size:9px;color: #999999;"/></a>
+                                                                                                        </td>
+                                                                                                        <td align="center"
+                                                                                                            style="line-height: 0px;padding:10px;">
+                                                                                                            <a href="https://www.linkedin.com/in/barry-lewis-21529230/"><img
+                                                                                                                        width="50"
+                                                                                                                        height="50"
+                                                                                                                        class="resized-btn"
+                                                                                                                        src="/images/aboutus/4.png"
+                                                                                                                        style="display:block; line-height:12px; font-size:9px; color: #999999; border:0px;"
+                                                                                                                        alt="Linkedin"/></a>
+                                                                                                        </td>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td height="15"></td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" width="">
+                                                <table class="table-inner" align="center" border="0" cellpadding="0"
+                                                       cellspacing="0">
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td bgcolor="#F8F9F4" align="center"
+                                                            style="text-align:center;vertical-align:top;font-size:0;border:1px solid #E1E1E1;">
+                                                            <!--end left-->
+                                                            <!--[if (gte mso 9)|(IE)]>
+                                                            </td>
+                                                            <td align="center"
+                                                                style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <![endif]-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td bgcolor="#F8F8F8" align="center"
+                                                                            width="550">
+                                                                            <table width="90%" align="center" border="0"
+                                                                                   cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td height="15"></td>
+                                                                                </tr>
+                                                                                <!-- title -->
+                                                                                <tr>
+                                                                                    <td align="center"
+                                                                                        style="font-family: Century Gothic, arial, sans-serif; font-size: 14px; color: #4A4A4A; line-height: 16px;font-weight: normal;">
+                                                                                        We are focused on three goals
+                                                                                        for the industry:
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <!-- end title -->
+                                                                                <tr>
+                                                                                    <td height="15"></td>
+                                                                                </tr>
+                                                                                <!-- content -->
+                                                                                <tr>
+                                                                                    <td align="left"
+                                                                                        style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #9B9B9B; line-height: 20px;text-align:left !important;padding:0px 20px 0px 20px;"
+                                                                                        br>(1) Increase value and
+                                                                                        utilization for your operations
+                                                                                        through business services and
+                                                                                        technology products
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        (2) Protect you from federal
+                                                                                        regulators while enhancing
+                                                                                        passenger and public safety
+                                                                                        <br>
+                                                                                        <br>
+                                                                                        (3) Provide timely, effective
+                                                                                        and industry-sensitive
+                                                                                        information intended to deliver
+                                                                                        insight so that we may assist
+                                                                                        with any strategic
+                                                                                        considerations
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <!-- end content -->
+                                                                                <tr>
+                                                                                    <td height="15"></td>
+                                                                                </tr>
+                                                                                <!-- button -->
+                                                                                <tr>
+                                                                                    <td align="left"
+                                                                                        style="padding-left:20px;padding-right:20px;">
+                                                                                        <table style="border-radius: 10px;background:#689258 !important;"
+                                                                                               bgcolor="#689258"
+                                                                                               align="left" border="0"
+                                                                                               cellspacing="0"
+                                                                                               cellpadding="0">
+                                                                                            <tr>
+                                                                                                <td class="mobile-button"
+                                                                                                    height="50"
+                                                                                                    style="font-family: Century Gothic, sans-serif; font-size: 12px; color: #ffffff;font-weight: normal;padding-left: 20px;padding-right: 20px;">
+                                                                                                    <a href="https://transitfunding.net/"
+                                                                                                       style="text-decoration:none; color:#ffffff;">
+                                                                                                        <center>Click
+                                                                                                            For More
+                                                                                                            Details
+                                                                                                        </center>
+                                                                                                    </a></td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <!-- end button -->
+                                                                                <tr>
+                                                                                    <td height="15"></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end 1/1 content-->
+
+
+            <!-- CONTAINER TABLE -->
+            <!--1/1 content-->
+            <table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="table-layout: fixed;">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center">
+                                    <table class="table-inner" width="100%" align="center" border="0" cellpadding="0"
+                                           cellspacing="0">
+                                        <tr>
+                                            <td align="center" bgcolor="#689258"
+                                                style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center;padding: 15px; ">
+                                                <table align="center" width="90%" border="0" cellspacing="0"
+                                                       cellpadding="0">
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                    <!--content-->
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="font-family: Century Gothic, sans-serif; font-size: 14px; color: #ffffff; line-height: 18px; font-weight: 500;">
+                                                            Here are some of our goals and achievements since 2014 for
+                                                            the passenger-carrier transportation industry and what we
+                                                            have in store for the next 5 years:
+                                                        </td>
+                                                    </tr>
+                                                    <!--end content-->
+                                                    <tr>
+                                                        <td height="20"></td>
+                                                    </tr>
+
+                                                </table>
+                                                <table align="center" width="40" bgcolor="#ffffff"
+                                                       style="border-radius:10px;" border="0" cellpadding="0"
+                                                       cellspacing="0">
+                                                    <tr>
+                                                        <td align="center" height="5"
+                                                            style="line-height:0px; font-size:0px;">&nbsp;
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end 1/1 content-->
+
+
+            <!-- CONTAINER TABLE -->
+            <!-- 2/2 content-->
+            <table bgcolor="" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center"
+                                    style="text-align:center;vertical-align:top;font-size:0;">
+                                    <!--left-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table class="table-inner" width="100%" bgcolor="#F8F8F8" align="center"
+                                               border="0" cellpadding="0" cellspacing="0" style="background:#F8F8F8;">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    style="text-align:center; vertical-align:top; font-size:0;;height: 535px; padding: 20px 0 26px;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #3D5C32; font-weight: 900; opacity: .6; line-height: 30px;">
+                                                                            Our Next Five Years
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #777777; line-height: 21px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Delivering the Next Generation of Uber-Like
+                                                                            Technology Products for USDOT-regulated
+                                                                            companies through our <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="http://portfolio.ipassenger.net/index.php"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">ePassenger©</a></span>,
+                                                                            <span style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://transitfunding.net/portfolio_ipassenger.php"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">iPassenger©</a></span>,
+                                                                            <span style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://emotorcoach.net/"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">eLimousine©</a></span>,
+                                                                            <span style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://www.imotorcoach.net/"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">iMotorcoach©</a></span>,
+                                                                            <span style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://elimousines.net/"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">eLimousines©</a></span>,
+                                                                            and <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 20px; text-decoration: none;"><a
+                                                                                        href="https://transitfunding.net/portfolio.php"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">iLimousines©</a></span>
+                                                                            products
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Continuing to Aid Clients with
+                                                                            <br>1 - Homeland Security Funding
+                                                                            <br>2 - 5311(f) Intercity Bus Funding
+                                                                            <br>3 - VW Settlement Bus Funding
+                                                                            <br>4 - Fiat-Chrysler Bus Funding
+                                                                            <br>5 - FMCSA Mock Audits
+                                                                            <br>6 - State and Federal Regulatory
+                                                                            Assistance
+                                                                            <br>7 - Search Engine Optimization
+                                                                            <br>8 - Social Media Assistance
+                                                                            <br>9 - RFP Identification and Preparation
+                                                                            <br>and Much More
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end left-->
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    <td align="center" style="text-align:center;vertical-align:top;font-size:0;">
+                                    <![endif]-->
+                                    <!--right-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table class="table-inner" width="100%" bgcolor="#96BB90" align="center"
+                                               border="0" cellpadding="0" cellspacing="0"
+                                               style="border-bottom: 1px solid #e5e5e5;">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    background="https://i.imgur.com/xx6xAs3.jpg" bgcolor="#3D5C32"
+                                                    style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center;height: 482px; padding: 20px 0 23px;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #CBD6C5; font-weight: 900; opacity: 2.5; line-height: 30px;">
+                                                                            2018
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #ffffff; line-height: 24px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Secured 37.71% of Homeland Security Grant
+                                                                            Funding for ABA, UMA, Trailways and IMG
+                                                                            Members who support more than 28 million
+                                                                            passengers annually
+                                                                            <br/>
+                                                                            <br>
+                                                                            Invested More Than 3,500 Man Hours In
+                                                                            Technology Platform Updates on our <a
+                                                                                    href="https://transitfunding.net/portfolio_epassenger.php"
+                                                                                    style="color:#ffffff;"
+                                                                                    target="_blank">ePassenger©</a>, <a
+                                                                                    href="https://transitfunding.net/portfolio_ipassenger.php"
+                                                                                    style="color:#ffffff;"
+                                                                                    target="_blank">iPassenger©</a>, <a
+                                                                                    href="https://emotorcoach.net/"
+                                                                                    style="color:#ffffff;"
+                                                                                    target="_blank">eLimousine©</a> and
+                                                                            <a href="https://elimousines.net/"
+                                                                               style="color:#ffffff;" target="_blank">eLimousines©</a>
+                                                                            products and platforms
+                                                                            <br>
+                                                                            <br>
+                                                                            Prepared and secured more than $10 million
+                                                                            in contractual RFP business opportunities
+                                                                            with DOD, GSA, and other transit
+                                                                            opportunities<br>
+                                                                            <br>
+                                                                            Aided School Bus Industry In Removal of
+                                                                            School Buses from UCR Fees
+                                                                            <br>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end right-->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end 2/2 content-->
+
+
+            <!-- CONTAINER TABLE -->
+            <!-- 2/2 content-->
+            <table bgcolor="" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center"
+                                    style="text-align:center;vertical-align:top;font-size:0;">
+                                    <!--left-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table class="table-inner" width="100%" bgcolor="#96BB90" align="center"
+                                               border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    background="https://i.imgur.com/zMDb72N.jpg" bgcolor="#5D844F"
+                                                    style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center;height: 320px; padding: 20px 0;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #CBD6C5; font-weight: 900; opacity: 2.5; line-height: 30px;">
+                                                                            2017
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #ffffff; line-height: 24px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Secured 25.51% of Homeland Security Grant
+                                                                            Funding for ABA, UMA, Trailways and IMG
+                                                                            Members
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Completed FMCSA Mock Audits and Continued To
+                                                                            Provide Strategic Counsel on Recordable
+                                                                            Accidents for a 4th Year
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Continued Website Development, SEO, and
+                                                                            Social Media Development For <a
+                                                                                    href="http://epassenger.net/portfolio_websites.php"
+                                                                                    style="color:#ffffff;"
+                                                                                    target="_blank">ePassenger©</a>
+                                                                            Clients
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end left-->
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    <td align="center" style="text-align:center;vertical-align:top;font-size:0;">
+                                    <![endif]-->
+                                    <!--right-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table class="table-inner" width="100%" bgcolor="#F8F8F8" align="center"
+                                               border="0" cellpadding="0" cellspacing="0" style="background:#F8F8F8;">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    style="text-align:center; vertical-align:top; font-size:0;;height: 364px; padding: 20px 0;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #689258; font-weight: 900; opacity: .99; line-height: 30px;">
+                                                                            2016
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #777777; line-height: 24px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Secured 32% of Homeland Security Grant
+                                                                            Funding for ABA, UMA, Trailways and IMG
+                                                                            Members
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Commenced Development of our <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://emotorcoach.net/"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">eLimousine©</a></span>,
+                                                                            and <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="https://elimousines.net/"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">eLimousines©</a></span>,
+                                                                            <a href="http://portfolio.ipassenger.net/index.php"
+                                                                               style="color:#777777;" target="_blank">Product
+                                                                                Websites</a>
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Commenced Preparation of Section 5311(f)
+                                                                            Grant Applications for Line Run Operators
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end right-->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--end 2/2 content-->
+
+            <!-- CONTAINER TABLE -->
+            <!-- 2/2 content-->
+            <table bgcolor="" align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center"
+                                    style="text-align:center;vertical-align:top;font-size:0;">
+                                    <!--left-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table width="100%" class="table-inner" bgcolor="#96BB90" align="center"
+                                               border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    bgcolor="#F8F8F8"
+                                                    style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center; height: 370px;padding:20px 0;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #689258; font-weight: 900; opacity: .99; line-height: 30px;">
+                                                                            2015
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #777777; line-height: 24px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Secured 21.5% of Homeland Security Grant
+                                                                            Funding To Enhance Bus and Bus Facility
+                                                                            Security Needs including for ABA, UMA,
+                                                                            Trailways and IMG Members
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Launched our <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="http://epassenger.net/portfolio_ipassenger.php"
+                                                                                        style="color:#777777;"
+                                                                                        target="_blank">iPassenger©</a></span>
+                                                                            Suite of Mobile Application Technology
+                                                                            Products
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Expanded Assistance with State and Federal
+                                                                            Regulatory Assistance Including with School
+                                                                            Bus Operations and their needs with the
+                                                                            FMCSA
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end left-->
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    </td>
+                                    <td align="center" style="text-align:center;vertical-align:top;font-size:0;">
+                                    <![endif]-->
+                                    <!--right-->
+                                    <div style="display:inline-block;vertical-align:top;">
+                                        <table class="table-inner" width="100%" bgcolor="#96BB90" align="center"
+                                               border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="300" class="table-inner custom-height" align="center"
+                                                    background="https://i.imgur.com/E3RFUmM.jpg" bgcolor="#8EAE7D"
+                                                    style="text-align:center; vertical-align:top; font-size:0; background-size:cover; background-position:center;  height: 370px; padding: 20px 0;">
+                                                    <table align="center" width="100%" border="0" cellspacing="0"
+                                                           cellpadding="0">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <table align="center" width="90%" border="0"
+                                                                       cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 25px; color: #3C5B31; font-weight: 900; opacity: .99; line-height: 30px;">
+                                                                            2014
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="left"
+                                                                            style="font-family: Century Gothic, arial,sans-serif; font-size: 13px; color: #ffffff; line-height: 24px;text-align:left !important;padding: 10px 20px 10px 20px;">
+                                                                            Assisted USDOT-regulated companies with
+                                                                            Safety Management Plan Development and
+                                                                            Improve SAFER rating statuses
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Launched our <span
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #ffffff; line-height: 24px; text-decoration: none;"><a
+                                                                                        href="http://epassenger.net/portfolio_epassenger.php"
+                                                                                        style="color:#ffffff;"
+                                                                                        target="_blank">ePassenger©</a></span>
+                                                                            Technology Product Lines Including for Tour
+                                                                            & Charter Companies
+                                                                            <br/>
+                                                                            <br/>
+                                                                            Identified and Prepared More than $5 million
+                                                                            in Contractual RFP Business Opportunities
+                                                                            and Grants For Clients
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--end right-->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!--end 2/2 content-->
+
+
+            <!-- footer -->
+            <table align="center" bgcolor="" border="0" cellpadding="0" cellspacing="0" width="100%"
+                   style="table-layout: fixed;">
+                <tr>
+                    <td align="center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="600" align="center">
+                                    <table class="table-inner" bgcolor="#FFFFFF" width="100%" align="center" border="0"
+                                           cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center">
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                        <td height="25"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <!--left-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td width="290" class="table-inner"
+                                                                            align="center">
+                                                                            <table align="center" width="90%" border="0"
+                                                                                   cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td align="center">
+                                                                                        <table width="100%"
+                                                                                               bgcolor="#335528"
+                                                                                               border="0"
+                                                                                               cellpadding="0"
+                                                                                               cellspacing="0"
+                                                                                               style="background: #335528;width:90% !important;">
+                                                                                            <tr>
+                                                                                                <td height="3"
+                                                                                                    style="line-height:0px; font-size:0px;">
+                                                                                                    &nbsp;
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td height="5"></td>
+                                                                                </tr>
+                                                                                <!-- content -->
+                                                                                <tr>
+                                                                                    <td style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #9B9B9B; line-height: 24px;padding:10px 20px 10px 20px;text-align:left !important">
+                                                                                        To Learn More About How We Are
+                                                                                        Prepared To Serve You, Your
+                                                                                        Family, Your Employees and Your
+                                                                                        Passengers, Please Feel Free To
+                                                                                        Call Us At<br> <span
+                                                                                                style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;"
+                                                                                                class="apple-links"> <a
+                                                                                                    href="tel:712-221-4095">712-221-4095</a></span>
+                                                                                        Or By Email at <a
+                                                                                                href="mailto:barrylewis@transitfunding.net"
+                                                                                                style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;">barrylewis@transitfunding.net</a>
+                                                                                        Or
+                                                                                        <a href="mailto:barrylewis@epassenger.net"
+                                                                                           style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;">barrylewis@epassenger.net!</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <!-- end content -->
+                                                                                <tr>
+                                                                                    <td height="20"></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+
+                                                            <!--end left-->
+                                                            <!--[if (gte mso 9)|(IE)]>
+                                                            </td>
+                                                            <td align="center"
+                                                                style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <![endif]-->
+                                                            <!--right-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td width="290" class="table-inner"
+                                                                            align="center">
+                                                                            <table align="center" width="90%" border="0"
+                                                                                   cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td align="center">
+                                                                                        <table width="100%"
+                                                                                               bgcolor="#335528"
+                                                                                               border="0"
+                                                                                               cellpadding="0"
+                                                                                               cellspacing="0"
+                                                                                               style="background: #335528;width:90% !important;">
+                                                                                            <tr>
+                                                                                                <td height="3"
+                                                                                                    style="line-height:0px; font-size:0px;">
+                                                                                                    &nbsp;
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td height="5"></td>
+                                                                                </tr>
+                                                                                <!-- content -->
+                                                                                <tr>
+                                                                                    <td style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #9B9B9B; line-height: 24px;text-align:left !important;padding:10px 20px 10px 20px;">
+                                                                                        Also, you can join and follow us
+                                                                                        on Facebook and Twitter To
+                                                                                        Receive Time-Sensitive and
+                                                                                        Detailed News, Due Diligence
+                                                                                        Reports and Information
+                                                                                        Regarding Industry Matters.
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <!-- end content -->
+                                                                                <tr>
+                                                                                    <td height="25"></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end right-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="table-inner" width="100%" border="0" align="center" cellpadding="0"
+                                           cellspacing="0" bgcolor="#FFFFFF">
+                                        <tr>
+                                            <td align="center" bgcolor="#F4F4F4" style="border-top: 1px solid #dddddd;">
+                                                <table width="100%" align="center" border="0" cellspacing="0"
+                                                       cellpadding="0">
+                                                    <tr>
+                                                        <td height="15"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center"
+                                                            style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <!--logo-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td width="350" align="center">
+                                                                            <table align="center" border="0"
+                                                                                   cellspacing="0" cellpadding="0">
+                                                                                <tr>
+                                                                                    <td align="left"
+                                                                                        style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px;"
+                                                                                        class="mobile-links">
+                                                                                        <img alt="Email:"
+                                                                                             src="/images/aboutus/5.png"
+                                                                                             border="0" height="8"
+                                                                                             width="17"/><a
+                                                                                                style="text-decoration:none; color:#345528;"
+                                                                                                href="mailto:barrylewis@transitfunding.net">barrylewis@transitfunding.net</a><br/>
+                                                                                        <img class="apple-links"
+                                                                                             alt="Phone:"
+                                                                                             src="/images/aboutus/6.png"
+                                                                                             border="0" height="10"
+                                                                                             width="15"/><a
+                                                                                                style="text-decoration:none; color:#345528;"
+                                                                                                href="tel:712-221-4095">712-221-4095</a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td height="10"></td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end logo-->
+                                                            <!--[if (gte mso 9)|(IE)]>
+                                                            </td>
+                                                            <td align="center"
+                                                                style="text-align:center;vertical-align:top;font-size:0;">
+                                                            <![endif]-->
+                                                            <!--social-->
+                                                            <div style="display:inline-block;vertical-align:top;">
+                                                                <table align="center" border="0" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td width="250" align="center">
+                                                                            <table border="0" align="center"
+                                                                                   cellpadding="0" cellspacing="0">
+                                                                                <tr>
+                                                                                    <td align="center"
+                                                                                        style="line-height: 0px;padding:8px;">
+                                                                                        <a href="http://www.facebook.com/transitfunding"><img
+                                                                                                    width="32"
+                                                                                                    height="32"
+                                                                                                    src="/images/aboutus/2.png"
+                                                                                                    style="display:block; line-height:12px; font-size:9px;color: #999999;"
+                                                                                                    alt="facebook"/></a>
+                                                                                    </td>
+                                                                                    <td width="10"></td>
+                                                                                    <td align="center"
+                                                                                        style="line-height: 0px;padding:8px;">
+                                                                                        <a href="http://www.twitter.com/transit_funding"><img
+                                                                                                    width="32"
+                                                                                                    height="32"
+                                                                                                    src="/images/aboutus/3.png"
+                                                                                                    alt="twitter"
+                                                                                                    style="display:block; line-height:12px; font-size:9px;color: #999999;"/></a>
+                                                                                    </td>
+                                                                                    <td width="10"></td>
+                                                                                    <td align="center"
+                                                                                        style="line-height: 0px;padding:8px;">
+                                                                                        <a href="https://www.linkedin.com/in/barry-lewis-21529230/"><img
+                                                                                                    width="32"
+                                                                                                    height="32"
+                                                                                                    src="/images/aboutus/4.png"
+                                                                                                    style="display:block; line-height:12px; font-size:9px; color: #999999; border:0px;"
+                                                                                                    alt="Linkedin"/></a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td height="15"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end social-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table class="table-inner" bgcolor="#F4F4F4" width="100%" border="0" align="center"
+                                           cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center"
+                                                style="text-align:center;vertical-align:top;font-size:0;">
+                                                <div style="display:inline-block;vertical-align:top;">
+                                                    <table align="center" border="0" cellpadding="0" cellspacing="0">
+                                                        <tr>
+                                                            <td width="100%" align="center">
+                                                                <table border="0" align="center" cellpadding="0"
+                                                                       cellspacing="0">
+                                                                    <!-- copyright -->
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-family: Century Gothic, sans-serif; font-size: 13px; color: #999999;font-weight: normal; ">
+                                                                            Copyright &copy; 2023 <br><a
+                                                                                    href="https://transitfunding.net/"
+                                                                                    style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;">United
+                                                                                States Transit Funding, Inc.</a> <br>All
+                                                                            rights reserved.
+                                                                        </td>
+                                                                    </tr>
+                                                                    <!--<tr>
+                                                                      <td align="center" style="font-family: Century Gothic, sans-serif; font-size: 13px; color: #999999;font-weight: normal; "><a href="https://transitfunding.net/webversion/" style="font-family: Century Gothic, arial,sans-serif; font-size: 14px; color: #39562A; line-height: 24px; text-decoration: none;">Webversion</a>  <a href='[unsubscribe]' style="color: #ffffff;font-size: 4pt;">Unsubsribe</a></td>
+                                                                    </tr>-->
+                                                                    <!-- end copyright -->
+                                                                    <tr>
+                                                                        <td height="10"></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <!--[if (gte mso 9)|(IE)]>
+                                                </td>
+                                                <td align="center"
+                                                    style="text-align:center;vertical-align:top;font-size:0;">
+                                                <![endif]-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- end footer -->
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+{% endblock %}
+

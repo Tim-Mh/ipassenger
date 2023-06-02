@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Terms & Conditions{% endblock %}
+
+{% block stylesheets %}
+
+    <style type="text/css">
+        /*.pac-container:after {
+            !*Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown*!
+            background-image: none !important;
+            height: 0px;
+        }*/
+        section{
+            background-image: url('/images/face.jpg');
+
+        }
+        .card {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .card-body {
+            /*padding:100px;*/
+            padding-right: 100px;
+            padding-left: 100px;
+        }
+        .text-center{
+            font-size: 24px;
+            margin: 17px 0 30px;
+            font-weight: bold;
+            color: #33691E;
+            font-family: "Quicksand", sans-serif;
+        }
+        .card-body p{
+            font-weight: 400;
+            font-family: "Poppins", sans-serif;
+            line-height: 1.5pc;
+            font-size: .151041667in;
+            box-sizing: border-box;
+        }
+        @media screen and (max-width: 767px) {
+            .card {
+                width: 90%;
+                padding: 20px;
+            }
+            .card-body {
+                width: 90%;
+                padding: 5px;
+            }
+        }
+        .dropdown:hover .dropdown-menu {
+            display: none;
+        }
+
+        .main-menu-v2 ul {
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+
+    <!--DASHBOARD-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Terms & Conditions</h2>
+                            <p>United States Transit Funding, Inc., through its suite of technology product lines, is designed to directly connect consumers and passenger-carrier transportation and transit providers.</p>
+                            <p>We are not a believer in transportation brokers who take upwards of 35 percent of the cost of a trip and we believe that companies who employ CDL operators with P endorsements are the best-equipped to provide safe and effective passenger-carrier transportation including Uber-and-Lyft like services.
+                            </p>
+                            <p>Through our technology platforms, any of the 21,000 companies in the United States is able to serve those consumers that have worked with ride sharing platforms like Uber and Lyft or have worked with bus brokers like US Coachways, Metropolitan Shuttle and other companies.</p>
+                            <p>We are a believer that USDOT-regulated entities that provide a diversified suite of passenger-carrier transportation and transit options and should have equal footing.</p>
+                            <p>It is our focus to help make sure that both consumers and clients are properly served through our technology platforms Because of this goal, we will always strive to ensure that our terms of service is both fair and reasonable.</p>
+                            <p>Our eMotorcoach© solution, like the rest of our technology products, is designed to connect companies and consumers and should be seen as a technology platform so that you can have direct business relationships between consumers and USDOT-regulated companies while we maintain and develop secure technology platforms.</p>
+                            <p>Because of this, by enjoying our technology platforms, we are here to serve both consumers and vendors in a form and manner that absolves and negates any arbitrary claims to United States Transit Funding, Inc. for a vendor and a consumer.</p>
+                            <p>In the meantime, we will do our best to help you enjoy safe, effective and affordable passenger-carrier transportation by providing you mobility options where companies provide USDOT-regulated passenger-carrier transportation in accordance to their own insurance regulatory requirements and mandated safety-sensitive operational requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--END DASHBOARD-->
+{% endblock %}
+
